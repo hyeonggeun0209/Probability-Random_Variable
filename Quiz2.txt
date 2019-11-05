@@ -1,0 +1,26 @@
+library(prob)
+S1<-rolldie(4)
+nrow(S1)
+S2<-subset(S1,X1<=X2&X2<=X3&X3<=X4)
+nrow(S2)
+C<-subset(S1,apply(S1,1,sum)>=20)
+nrow(C)
+library(MASS)
+as.fractions(nrow(C)/nrow(S1))
+
+library(prob)
+library(MASS)
+balls<-c(rep("B",3),rep("R",7))
+options(stringsAsfactors = FALSE)
+S<-urnsamples(balls,size=3)
+nrow(S)
+countB<-function(x)sum(x=="B")
+countR<-funciton(x)sum(x=="R")
+countR<-funciton(x) sum(x=="R")
+countR<-function(x) sum(x=="R")
+B2R1=subset(S,apply(S,1,countB)==2&apply(S,1,countR)==1)
+as.fractions(nrow(B2R1)/nrow(S))
+
+ppois(4,10)
+
+dbinom(4,29,0.12)*0.12

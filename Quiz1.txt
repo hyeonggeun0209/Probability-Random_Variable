@@ -1,0 +1,14 @@
+doors <- c("1", "2", "3") 
+results <- c() 
+for(i in 1:100000)
+{
+  car <- sample(doors, 1) # 차(car)가 속한 문
+  pick <- sample(doors, 1) # 참가자가 선택한 문
+  open <- sample(doors[which(doors != pick & doors != car)], 1) 
+
+  switchyes <-doors[which(doors != pick & doors != open)] 
+  if(pick==car) {results=c(results, "noswitchwin")}
+  if(switchyes==car) {results=c(results, "switchwin")}
+}
+sum(results=="switchwin")  
+sum(results == "noswitchwin")  
